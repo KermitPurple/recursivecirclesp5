@@ -1,8 +1,12 @@
 const width = 600;
 const height = 600;
+var offsetSlider
+var scaleSlider
 
 function setup(){
 	createCanvas(height, width);
+	offsetSlider = createSlider(2,4,2);
+	scaleSlider = createSlider(0,0.6,0.5,0.01);
 }
 
 function draw(){
@@ -14,10 +18,12 @@ function draw(){
 }
 
 function drawRecursiveCircles(x, y, d){
+	scale = scaleSlider.value()
+	offset = offsetSlider.value()
 	if(d > 2){
 		ellipse(x, y, d);
-		drawRecursiveCircles(x + d/2, y, d/2);
-		drawRecursiveCircles(x - d/2, y, d/2);
+		drawRecursiveCircles(x + d/offset, y, d*scale);
+		drawRecursiveCircles(x - d/offset, y, d*scale);
 		//drawRecursiveCircles(x, y + d/2, d/2);
 		//drawRecursiveCircles(x, y - d/2, d/2);
 	}
