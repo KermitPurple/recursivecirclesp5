@@ -1,0 +1,39 @@
+body{
+	background: black;
+	display: flex;
+}
+
+div{
+	position: top;
+	display: block;
+}
+
+h1 {
+	color: white;
+	font-size: 60px;
+}
+
+label{
+	color: white;
+	padding:0px;
+	margin:0px;
+}
+
+input[type="range"]{
+	display block;
+	padding:0px;
+	margin:0px;
+}
+
+#canvas{
+	display:block;
+}
+
+#controls{
+	display:block;
+	padding: 20px;
+}
+
+#sliders p{
+	color: white;
+}

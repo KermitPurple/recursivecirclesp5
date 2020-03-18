@@ -8,13 +8,21 @@ var left
 var right
 
 function setup(){
-	createCanvas(height, width);
+	createCanvas(height, width).parent('canvas');
+	createP("Offset").parent('sliders')
 	offsetSlider = createSlider(2,4,2, 0.1);
+	offsetSlider.parent('sliders');
+	createP("Scale").parent('sliders')
 	scaleSlider = createSlider(0,0.6,0.5,0.01);
+	scaleSlider.parent('sliders');
 	up = createCheckbox("Up", false);
+	up.parent('controls');
 	down = createCheckbox("Down", false);
+	down.parent('controls');
 	left = createCheckbox("Left", true);
+	left.parent('controls');
 	right = createCheckbox("Right", true);
+	right.parent('controls');
 }
 
 function draw(){
