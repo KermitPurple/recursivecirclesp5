@@ -1,5 +1,5 @@
-const width = 600;
-const height = 600;
+const width = window.innerHeight-20;
+const height = window.innerHeight-20;
 var offsetSlider
 var scaleSlider
 var up
