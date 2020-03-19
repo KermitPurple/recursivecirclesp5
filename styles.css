@@ -76,8 +76,8 @@ input[type="range"]{
 	}
 
 	#controls input[type="range"]{
-		height: 40px;
-		width: 400px;
+		height: 30px;
+		width: 300px;
 	}
 
 	#controls {
