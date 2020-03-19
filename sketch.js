@@ -11,12 +11,12 @@ function setup(){
 	} else {
 		createCanvas(window.innerHeight-5, window.innerHeight-5).parent('canvas');
 	}
-	createP("Offset").parent('sliders')
+	createP("Offset").parent('offset')
 	offsetSlider = createSlider(2,4,2, 0.1);
-	offsetSlider.parent('sliders');
-	createP("Scale").parent('sliders')
+	offsetSlider.parent('offset');
+	createP("Scale").parent('scale')
 	scaleSlider = createSlider(0,0.6,0.5,0.01);
-	scaleSlider.parent('sliders');
+	scaleSlider.parent('scale');
 	up = createCheckbox("Up", false);
 	up.parent('controls');
 	down = createCheckbox("Down", false);
