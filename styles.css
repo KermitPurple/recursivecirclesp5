@@ -20,7 +20,7 @@ label{
 }
 
 input[type="range"]{
-	display block;
+	display: block;
 	padding:0px;
 	margin:0px;
 }
@@ -36,4 +36,10 @@ input[type="range"]{
 
 #sliders p{
 	color: white;
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		display: block;
+	}
 }
