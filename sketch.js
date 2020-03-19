@@ -7,9 +7,9 @@ var right
 
 function setup(){
 	if(isMobileDevice()){
-		createCanvas(600,600).parent('canvas');
+		createCanvas(window.innerWidth-5, window.innerWidth-5).parent('canvas');
 	} else {
-		createCanvas(window.innerHeight - 20, window.innerHeight - 20).parent('canvas');
+		createCanvas(window.innerHeight-5, window.innerHeight-5).parent('canvas');
 	}
 	createP("Offset").parent('sliders')
 	offsetSlider = createSlider(2,4,2, 0.1);
