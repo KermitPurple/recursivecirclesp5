@@ -4,6 +4,12 @@ var up
 var down
 var left
 var right
+var prevOffset = 0
+var prevScale = 0
+var prevUp = false
+var prevDown = false
+var prevLeft = false
+var prevRight = false
 
 function setup(){
 	if(isMobileDevice()){
@@ -28,17 +34,21 @@ function setup(){
 }
 
 function draw(){
-	background(0);
-	translate(width/2, height/2)
-	stroke(255);
-	noFill();
-	drawRecursiveCircles(0, 0, width/2);
+	if(hasChanged()){
+		background(0);
+		translate(width/2, height/2)
+		stroke(255);
+		noFill();
+		drawRecursiveCircles(0, 0, width/2);
+		storeChanges();
+		console.log("Draw");
+	}
 }
 
 function drawRecursiveCircles(x, y, d){
 	var scl = scaleSlider.value()
 	var offset = offsetSlider.value()
-	if(d > 2){
+	if(d > 1){
 		ellipse(x, y, d);
 		if(right.checked())
 			drawRecursiveCircles(x + d/offset, y, d*scl);
@@ -49,6 +59,40 @@ function drawRecursiveCircles(x, y, d){
 		if(up.checked())
 			drawRecursiveCircles(x, y - d/offset, d*scl);
 	}
+}
+
+function storeChanges(){
+	prevOffset = offsetSlider.value();
+	prevScale = scaleSlider.value();
+	prevUp = up.checked();
+	prevDown = down.checked();
+	prevLeft = left.checked();
+	prevRight = right.checked();
+}
+
+function hasChanged(){
+	if(prevOffset !== offsetSlider.value()){
+		return true
+	}
+	if(prevOffset !== offsetSlider.value()){
+		return true
+	}
+	if(prevScale !== scaleSlider.value()){
+		return true
+	}
+	if(prevUp !== up.checked()){
+		return true
+	}
+	if(prevDown !== down.checked()){
+		return true
+	}
+	if(prevLeft !== left.checked()){
+		return true
+	}
+	if(prevRight !== right.checked()){
+		return true
+	}
+	return false
 }
 
 function isMobileDevice() {
